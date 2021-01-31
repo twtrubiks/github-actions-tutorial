@@ -6,4 +6,6 @@
 
 * [自動更新 github profile](https://github.com/twtrubiks/twtrubiks)
 
-* [Youtube Tutorial - (等待新增)github actions 教學 - part2]() - [文章快速連結](https://github.com/twtrubiks/github-actions-tutorial/blob/main/github_slack_notification/.github/workflows/slack.yml)
+* [Youtube Tutorial - github actions 搭配 slack 教學 - part2](https://youtu.be/Se5UZipBnBI) - [文章快速連結](https://github.com/twtrubiks/github-actions-tutorial/blob/main/github_slack_notification/.github/workflows/slack.yml)
+
+* [Youtube Tutorial - github actions 搭配 python 教學 - part3](https://youtu.be/VRgW1lcIg_A) - [文章快速連結](https://github.com/twtrubiks/github-actions-tutorial/blob/main/github_python_slack)
