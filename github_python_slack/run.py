@@ -59,16 +59,17 @@ class WebCrawler:
             res = self.rs.get(url[1], verify=False)
             soup = BeautifulSoup(res.text, 'html.parser')
             info_price = soup.select('.jsx-2941083017.info-price')[0].text
-            info_change = soup.select('.jsx-2941083017.info-change')[0].text
+            info_net = soup.select('.jsx-2941083017.change-net')[0].text
+            info_percent = soup.select('.jsx-2941083017.change-percent')[0].text
 
-            if '+' in info_change:
-                info_change = info_change.split('+')
-                info_change = '{}▲  {}▲'.format(info_change[1], info_change[2])
+            if '+' in info_net:
+                info = '{}▲  {}▲'.format(info_net, info_percent)
+                info = info.replace('+', '')
             else:
-                info_change = info_change.split('-')
-                info_change = '{}▼  {}▼'.format(info_change[1], info_change[2])
+                info = '{}▼  {}▼'.format(info_net, info_percent)
+                info = info.replace('-', '')
 
-            self.result.append('{}\n{}\n{}'.format(url[0], info_price, info_change))
+            self.result.append('{}\n{}\n{}'.format(url[0], info_price, info))
 
     def push(self, slack_webhook, line_token):
         result = '\n\n'.join(self.result)
@@ -76,10 +77,13 @@ class WebCrawler:
         slack = SlackNotification(result, slack_webhook)
         slack.push()
 
-        msg = LineNotification(line_token, result)
-        # target = os.getenv('LINE_USER_ID')
-        target = os.getenv('LINE_GROUP_ID')
-        msg.push(target)
+        try:
+            msg = LineNotification(line_token, result)
+            # target = os.getenv('LINE_USER_ID')
+            target = os.getenv('LINE_GROUP_ID')
+            msg.push(target)
+        except Exception as e:
+            print(e)
 
 if __name__ == '__main__':
     crawler = WebCrawler()
