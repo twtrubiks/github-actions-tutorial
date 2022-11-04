@@ -11,3 +11,8 @@
 * [Youtube Tutorial - github actions 搭配 python 教學 - part3](https://youtu.be/VRgW1lcIg_A) - [文章快速連結](https://github.com/twtrubiks/github-actions-tutorial/blob/main/github_python_slack)
 
 * [Youtube Tutorial - github actions 搭配 automatic-releases 教學](https://youtu.be/pCnGcLj_3Lg) - [文章快速連結](https://github.com/twtrubiks/github-actions-tutorial/blob/main/automatic-releases)
+
+
+學習了影片之後的一些重點紀錄：
+
+*Secret 是在 [Settings] 裡面，右側有 [Secret]，Secret 的變數名稱一定是大寫，如SLACK_WEBHOOK。
