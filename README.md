@@ -15,4 +15,5 @@
 
 學習了影片之後的一些重點紀錄：
 
-*Secret 是在 [Settings] 裡面，右側有 [Secret]，Secret 的變數名稱一定是大寫，如SLACK_WEBHOOK。
+*Secret 是在 [Settings] 裡面，右側有 [Secret]，Secret 的變數名稱一定是大寫，如：SLACK_WEBHOOK。
+*Secret 裡面放的是密碼。
