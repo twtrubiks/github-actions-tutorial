@@ -1,0 +1,13 @@
+on:
+  workflow_dispatch:
+  
+jobs:
+  my_job:
+    name: echo something
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: echo a string
+      - run: echo "This is my first echo in the github actions."
