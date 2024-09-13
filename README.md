@@ -11,3 +11,5 @@
 * [Youtube Tutorial - github actions 搭配 python 教學 - part3](https://youtu.be/VRgW1lcIg_A) - [文章快速連結](https://github.com/twtrubiks/github-actions-tutorial/blob/main/github_python_slack)
 
 * [Youtube Tutorial - github actions 搭配 automatic-releases 教學](https://youtu.be/pCnGcLj_3Lg) - [文章快速連結](https://github.com/twtrubiks/github-actions-tutorial/blob/main/automatic-releases)
+
+* Self-Hosted GitHub Actions Runner 教學 - [文章快速連結](https://github.com/twtrubiks/github-actions-tutorial/blob/main/self-hosted-gitHub-actions-runner)

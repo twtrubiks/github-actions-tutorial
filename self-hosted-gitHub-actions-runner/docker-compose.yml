@@ -1,0 +1,24 @@
+services:
+  worker:
+    image: myoung34/github-runner:latest
+    restart: always
+    environment:
+      REPO_URL: https://github.com/xxxxxx
+      RUNNER_NAME: example-name
+      RUNNER_WORKDIR: /tmp/runner/work
+      # RUNNER_GROUP: my-group
+      RUNNER_SCOPE: 'repo'
+      # RUNNER_TOKEN: someGithubTokenHere # This token is short lived
+      ACCESS_TOKEN: Token
+      LABELS: linux,x64,gpu
+      DISABLE_AUTO_UPDATE: 1
+      EPHEMERAL: 1
+    security_opt:
+      # needed on SELinux systems to allow docker container to manage other docker containers
+      - label:disable
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - '/tmp/runner:/tmp/runner'
+      # note: a quirk of docker-in-docker is that this path
+      # needs to be the same path on host and inside the container,
+      # docker mgmt cmds run outside of docker but expect the paths from within
